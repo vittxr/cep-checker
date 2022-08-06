@@ -1,0 +1,88 @@
+/*alert style: */
+.alert {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.alert--hidden {
+    display: none;
+    transform: translateY(-100px);   
+}
+
+.alert--visible {
+    display: block;
+}
+
+/*Timer line, indicando quanto tempo falta para o alert fechar*/
+.alert--visible::before {
+    display: block;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #EB4747;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: timer-line 5s ease;
+}
+
+@keyframes timer-line {
+    to {
+       width: 100%;
+    }
+}
+
+/*form and inputs styles*/
+.section__form {
+    width: 100%;
+    margin-top: 8rem;
+}
+
+.section__form-title {
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    padding: 2rem 0;
+}
+
+.section__form .form {
+    width: 100%;
+}
+
+.form-control-plaintext {
+    outline: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.form-control-plaintext:focus {
+    border-bottom: 1px solid rgb(130, 129, 129);
+}
+
+/*input loading animation*/
+/* loading animation reference: https://desenvolvimentoparaweb.com/css/animacao-loading-css */
+.input-cep__box {
+    position: relative;
+}
+
+.input-loading {
+    display: none;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    border-top-color: rgb(130, 129, 129);
+    width: 18px;
+    height: 18px;
+
+    /*calc(50% - 9px) centraliza o elemento verticalmente. Observe que o 9px é metade da altura do elemento (18px)*/
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 4%;
+    animation: is-rotating 1s infinite;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}
