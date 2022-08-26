@@ -20,7 +20,7 @@ var dismissAlertButton = document.querySelector(".btn-close").addEventListener("
 var loader = document.querySelector(".input-loading")
 
 //Chama a função main(), sempre que haver o evento de clique na tecla. 
-cep.addEventListener("keyup", main)
+cep.addEventListener("input", main)
 
 //main coloca o "-" no cep input e retorna o valor do cep, sem o hífen, para fazer a requisição na API, para verificar o cep.
 function main() {
